@@ -6,6 +6,20 @@ Prerequisites
 2. Maven 3.8+
 3. MySQL running (adjust application.properties)
 
+Authentication - Login First
+POST http://localhost:8081/api/auth/login
+
+JSON Body:
+{
+  "username": "john",
+  "password": "1234"
+}
+{
+  "token": "mock-jwt-token-for-john"
+}
+Copy this token and use it in Postman or Swagger UI as:
+Authorization: Bearer mock-jwt-token-for-john
+
 Setup & Run
 1. clone from git 
 git clone https://github.com/bal0011/JKTech.git
