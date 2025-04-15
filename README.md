@@ -6,19 +6,6 @@ Prerequisites
 2. Maven 3.8+
 3. MySQL running (adjust application.properties)
 
-Authentication - Login First
-POST http://localhost:8081/api/auth/login
-
-JSON Body:
-{
-  "username": "john",
-  "password": "1234"
-}
-{
-  "token": "mock-jwt-token-for-john"
-}
-Copy this token and use it in Postman or Swagger UI as:
-Authorization: Bearer mock-jwt-token-for-john
 
 Setup & Run
 1. clone from git 
@@ -36,7 +23,21 @@ spring.jpa.hibernate.ddl-auto=update
 mvn clean install
 mvn spring-boot:run
 
-4. Access Swagger UI
+4.Authentication - Login First
+POST http://localhost:8081/api/auth/login
+
+JSON Body:
+{
+  "username": "john",
+  "password": "1234"
+}
+{
+  "token": "mock-jwt-token-for-john"
+}
+Copy this token and use it in Postman or Swagger UI as:
+Authorization: Bearer mock-jwt-token-for-john
+
+5. Access Swagger UI
 http://localhost:8081/swagger-ui.html
 
 Rest API End Points 
