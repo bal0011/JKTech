@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,6 +27,7 @@ public class DocumentControllerTest {
     private DocumentRepository documentRepository;
 
     @Test
+    @WithMockUser(username = "testuser", roles = {"USER"})
     void testUploadEndpoint() throws Exception {
         MockMultipartFile file = new MockMultipartFile(
                 "file", "test.txt", "text/plain", "This is a test document.".getBytes()

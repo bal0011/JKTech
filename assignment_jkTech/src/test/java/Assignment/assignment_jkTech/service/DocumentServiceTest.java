@@ -6,7 +6,11 @@ import Assignment.assignment_jkTech.Service.DocumentService;
 
 import org.apache.tika.Tika;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.mock.web.MockMultipartFile;
 
 import static org.mockito.Mockito.mock;
@@ -15,11 +19,14 @@ import static org.mockito.Mockito.verify;
 
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
-
+@ExtendWith(MockitoExtension.class)
 public class DocumentServiceTest {
 
-	 private final DocumentRepository documentRepository = mock(DocumentRepository.class);
-	    private final DocumentService documentService = new DocumentService();
+	 @Mock
+	    private DocumentRepository documentRepository;
+
+	    @InjectMocks
+	    private DocumentService documentService;
 	    private final Tika tika = new Tika();
 
 	    @Test
