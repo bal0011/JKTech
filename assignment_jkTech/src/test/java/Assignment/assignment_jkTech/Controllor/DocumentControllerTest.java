@@ -26,6 +26,7 @@ public class DocumentControllerTest {
     @Autowired
     private DocumentRepository documentRepository;
 
+    
     @Test
     @WithMockUser(username = "testuser", roles = {"USER"})
     void testUploadEndpoint() throws Exception {

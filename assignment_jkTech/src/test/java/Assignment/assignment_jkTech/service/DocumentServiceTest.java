@@ -28,6 +28,7 @@ public class DocumentServiceTest {
 	    @InjectMocks
 	    private DocumentService documentService;
 	    private final Tika tika = new Tika();
+	    
 
 	    @Test
 	    void testIngestTextFile() throws Exception {
