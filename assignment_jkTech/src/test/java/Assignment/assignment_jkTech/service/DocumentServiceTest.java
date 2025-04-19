@@ -29,7 +29,6 @@ public class DocumentServiceTest {
 	    private DocumentService documentService;
 	    private final Tika tika = new Tika();
 	    
-
 	    @Test
 	    void testIngestTextFile() throws Exception {
 	        String testContent = "Spring Boot document test.";
