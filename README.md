@@ -57,3 +57,14 @@ type (String)
       http://localhost:8081/api/documents/filter?author=xxx &type=guide &page=0&size=10
 Testing
 Run mvn test
+
+
+
+Docker image running cmds
+1. Open docker quick terminal
+2. go to the project fold by using cd cmd
+3. docker build -t jk-tech-assignment-docker.jar .
+4. to check the docker image has created or not enter cmd docker image ls
+5. to run the created docker image using the below given cmd
+   -  docker run -p 9090:8080 jk-tech-assignment-docker.jar
+   -  change the endpoint to http://192.168.99.100:9090/api/documents/upload  --> IP address 192.168.99.100 where my docker is configured this should be changed accordingly
