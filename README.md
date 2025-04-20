@@ -60,11 +60,14 @@ Run mvn test
 
 
 
-Docker image running cmds
-1. Open docker quick terminal
-2. go to the project fold by using cd cmd
-3. docker build -t jk-tech-assignment-docker.jar .
-4. to check the docker image has created or not enter cmd docker image ls
-5. to run the created docker image using the below given cmd
+Folowing steps for creating docker image
+1.Build the application using maven command  "maven clean install".
+2. Open docker quick terminal
+3. Go to project directory
+4. Build the docker image using docker command  " docker build -t jk-tech-assignment-docker.jar .". 
+5. After execing the above steps docker image will be automatically generated under target folder, then run the docker command to run the docker image
    -  docker run -p 9090:8080 jk-tech-assignment-docker.jar
-   -  change the endpoint to http://192.168.99.100:9090/api/documents/upload  --> IP address 192.168.99.100 where my docker is configured this should be changed accordingly
+6. Once docker image runs successfully push docker image to docker container using below given command 
+   -  docker push balur123/jk-tech-assignment:latest.
+
+
